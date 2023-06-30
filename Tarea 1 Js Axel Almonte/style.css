@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+
+#back{
+    position: absolute;
+    background: rgb(0,255,21);
+    background: linear-gradient(160deg, rgba(0,255,21,1) 32%, rgba(1,242,220,1) 64%);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    z-index: -10;
+}
+
+#cal{
+    background-color: aliceblue;
+    width: 80vh; 
+    height: 80vh; 
+    margin: auto;
+    margin-top: 10vh;
+}
+
+h1{
+    font-family: Kanit;
+    position: relative;
+    text-align: center;
+    top: 20px;
+}
+
+#bot{
+    position: relative;
+    top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button{
+    background-color: rgba(1,242,220,1);
+    border-width: 1px;
+    font-family: Kanit;
+    font-size: 30px;
+    width: 250px;
+    height: 80px;
+    margin-bottom: 40px;
+}
+
+button:hover{
+    background-color: rgba(0,255,21,1);
+    transition: 1s;
+}
