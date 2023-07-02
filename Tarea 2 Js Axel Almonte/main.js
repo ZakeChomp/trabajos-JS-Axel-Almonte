@@ -33,8 +33,7 @@ while (con <= 12) {
 }
 
 
-//5.Algoritmo que me permita escribir un número decimal y me retorne el número convertido en binario. (int = 50; out = 110010);
-
+console.log("5.Algoritmo que me permita escribir un número decimal y me retorne el número convertido en binario. (int = 50; out = 110010)");
 
 //ent = entrada
 
