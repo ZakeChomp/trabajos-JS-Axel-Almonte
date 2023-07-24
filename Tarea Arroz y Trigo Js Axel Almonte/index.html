@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de ingreso de arroz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="back">
+    <div id="cal">
+        <h1>Calculadora de ingreso de arroz basado en trigo</h1>
+        
+        <form id="inputs">
+            <form id="inputWheat">
+                <input placeholder="Ingrese el trigo aquí" id="whe">
+            </form>
+
+            <form id="inputDay">
+                <select id="day">
+                    <option value="def">Selecciona un día</option>
+                    <option value="mon">Lunes</option>
+                    <option value="tue">Martes</option>
+                    <option value="wen">Miércoles</option>
+                    <option value="thu">Jueves</option>
+                    <option value="fri">Viernes</option>
+                    <option value="sat">Sábado</option>
+                    <option value="sun">Domingo</option>
+                </select>
+            </form>
+
+            <button id="sub" onclick="calculate()">Calcular</button>
+        </form>
+        <p id="ric">Aquí aparecerá el ingreso de arroz en resultado del calculo anterior</p>
+
+    </div>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

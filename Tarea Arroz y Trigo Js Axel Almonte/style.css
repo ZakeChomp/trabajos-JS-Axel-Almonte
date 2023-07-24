@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;1,200&display=swap');
+
+body{
+    margin: 0;
+}
+
+#back{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-image:url(https://cerealscanada.ca/wp-content/uploads/2022/09/Wheat_cov_heaader.jpg);
+    background-size: cover;
+}
+
+#cal{
+    background-color: aliceblue;
+    width: 80vw; 
+    height: 80vh; 
+    margin: auto;
+    margin-top: 10vh;
+    text-align: center;
+}
+
+h1 {
+    padding-top: 10vh;
+    font-size: 6vh;
+    font-family: Nunito;
+}
+
+#inputs{
+    padding-top: 6vh;
+}
+
+#inputWheat{
+    padding: 2vh;
+}
+
+#inputDay{
+    padding-bottom: 2vh;
+}
+
+input{
+    height: 8vh;
+    width: 40.5vh;
+    font-size:3.5vh;
+    font-family: Nunito;
+    text-align: center;
+}
+
+select{
+    height: 6vh;
+    width: 35vh;
+    font-size:3.5vh;
+    font-family: Nunito;
+    text-align: center;
+}
+
+#sub{
+    height: 8vh;
+    width: 23.5vh;
+    font-size: 5vh;
+    font-family: Nunito;
+
+}
+
+p{
+    padding: 3vh;
+    font-size: 5vh;
+    font-family: Nunito;
+}
