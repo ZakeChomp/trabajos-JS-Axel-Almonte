@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Tester</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div>
+
+    <h1>Users System</h1>
+    <table id="userTable">
+
+      <tr>
+        <th>Usuario</th>
+        <th>Email</th>
+        <th>Contraseña</th>
+        <th>Edad</th>
+        <th>Teléfono</th>
+      </tr>
+
+      <tr id="example">
+        <td>Ejemplo</td>
+        <td>correo@gmail.com</td>
+        <td>Contraseña</td>
+        <td>20</td>
+        <td>333-444-5555</td>
+      </tr>
+
+    </table>
+
+    <form>
+      <h2>Usuario</h2>
+      <input type="text" id="user">
+      <h2>Email</h2>
+      <input type="email"  id="email">
+      <h2>Contraseña</h2>
+      <input type="password" id="password">
+      <h2>Edad</h2>
+      <input type="number" id="age">
+      <h2>Teléfono</h2>
+      <input type="text" id="phone">
+    </form>
+
+    <div id="btns">
+      <button onclick="save()" class="btnAcciones">Crear usuario</button>
+      <button onclick="deleteLastUser()" type="button" class="btnAcciones" >Borrar ultimo usuario</button>
+      <button onclick="deleteExample()" type="button" class="btnAcciones">Borrar ejemplo</button>
+  </div>
+
+  </div>
+  
+  <script>
+    
+    function save(){
+      const userTable = document.getElementById("userTable");
+      var user = document.getElementById("user").value;
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var age = document.getElementById("age").value;
+      var phone = document.getElementById("phone").value;
+      
+      const example = document.getElementById("example");
+      const newUser = document.createElement("tr");
+      const newUs1 = document.createElement("td");
+      const newUs2 = document.createElement("td");
+      const newUs3 = document.createElement("td");
+      const newUs4 = document.createElement("td");
+      const newUs5 = document.createElement("td");
+
+      newUs1.innerHTML = user;
+      newUs2.innerHTML = email;
+      newUs3.innerHTML = password;
+      newUs4.innerHTML = age;
+      newUs5.innerHTML = phone;
+      newUser.setAttribute("id", "newRow");
+      newUser.appendChild(newUs1);
+      newUser.appendChild(newUs2);
+      newUser.appendChild(newUs3);
+      newUser.appendChild(newUs4);
+      newUser.appendChild(newUs5);
+      userTable.appendChild(newUser);
+    }
+
+    function deleteLastUser(){
+      const newRow = document.getElementById("newRow");
+      newRow.remove();
+    }
+
+    function deleteExample(){
+      example.remove();
+    }
+
+    const getAllUsers = async () => {
+      const response = await fetch('http://localhost:3000/api/users/');
+      const users = await response.json();
+      console.log(users);
+    }
+
+    const getUserById = async (id) => {
+      const response = await fetch(`http://localhost:3000/api/users/${id}`);
+      const users = await response.json();
+      console.log(users);
+    }
+
+    const saveUser = async () => {
+      const data = { username: 'Florence', age: 45 };
+      const response = await fetch('http://localhost:3000/api/users/', {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      console.log(response.json());
+    }
+
+    const editUserInfo = async (id) => {
+      const data = { username: 'Florence01', age: 45 };
+      const response = await fetch(`http://localhost:3000/api/users/${id}`, {
+        method: 'PATCH',
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      });
+      console.log(response.json());
+    }
+
+    const deleteUser = async (id) => {
+      const response = await fetch(`http://localhost:3000/api/users/${id}`, { method: 'DELETE' });
+      console.log(response.json());
+    }
+  </script>
+</body>
+</html>
